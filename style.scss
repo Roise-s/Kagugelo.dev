@@ -1,0 +1,479 @@
+@import 'menu';
+
+@mixin display($rc, $size, $b) {
+    display: flex;
+    flex-direction: $rc;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $size;
+    font-weight: $b
+}
+
+a {
+    text-decoration: none
+}
+
+.header {
+    @include display(row, 15px, 400);
+    height: 70px;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1000;
+
+    .left-section {
+        flex: 1;
+        padding-left: 15px;
+    
+        .kgaugelo-dev-home {
+            @media (max-width: 300px) {
+                visibility: hidden;
+            }
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            border: none;
+            background: transparent;
+    
+            &:hover {
+                opacity: 0.5;
+                cursor: pointer;
+            }
+    
+            &:active {
+                opacity: 0.8;
+            }
+        }
+    }
+    
+    .middle-section {
+        flex: 2;
+        visibility: hidden;
+    }
+    
+    .right-section {
+        flex: 1;
+    }
+}
+
+.main-section {
+    @media (max-width: 600px) {
+        @include display(column, 15px, 400);
+        padding-top: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 0;
+    }
+    @media (max-width: 800px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    @include display(row, 15px, 400);
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 50px;
+    margin-bottom: 30px;
+
+    .main-one {
+        @include display(column, 15px, 400);
+        flex: 1.5;
+
+        .inner-texts {
+
+            .title-p {
+                @media (max-width: 300px) {
+                    font-size: 20px;
+                }
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 50px;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+
+            .e-of-texts {
+                color: rgb(158, 158, 158)
+            }
+        }
+
+        .in-github-icons {
+            @media (max-width: 300px) {
+                flex-direction: column;
+            }
+            display: flex;
+    
+            .ig {
+                height: 50px;
+                width: 50px;
+                margin-right: 30px;
+                border: none;
+                background: transparent;
+    
+                &:hover {
+                    opacity: 0.5;
+                    cursor: pointer;
+                }
+    
+                &:active {
+                    opacity: 0.8;
+                }
+    
+                .ig-img {
+                    height: 50px;
+                    width: 50px;
+                }
+    
+                .ig-sec {
+                    height: 45px;
+                    width: 45px;
+                }
+            }
+        }
+    }
+
+    .main-two {
+        @media (max-width: 350px) {
+            visibility: hidden;
+        }
+        @include display(row, 15px, 400);
+        flex: 0.5;
+
+        .my-pic {
+            height: 300px;
+            border-radius: 25px;
+        }
+    }
+}
+
+.tech-stack {
+    @media (max-width: 600px) {
+        @include display(column, 25px, 400);
+    }
+    @include display(row, 25px, 400);
+    column-gap: 20px;
+    margin-top: 0;
+    margin-top: 70px;
+
+    .html {
+        @media (max-width: 600px) {
+            @include display(row, 15px, 400);
+            height: 100px;
+            width: 100px;
+        }
+        height: 50px;
+        width: 50px;
+        background: transparent;
+        border: none;
+
+        .html-2 {
+            height: 50px;
+            width: 50px;
+        }
+
+
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        &:active {
+            opacity: 0.8;
+        }
+    }
+}
+
+.about-me {
+    @media (max-width: 600px) {
+        @include display(column, 15px, 400);
+    }
+    @include display(row, 15px, 400);
+    padding-left: 30px;
+    padding-right: 30px;
+    column-gap: 30px;
+    margin-top: 50px;
+
+    .animations {
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /* put the main div's name on body */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+        }
+        
+        .box {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+        
+        .card {
+            width: 60px;
+            height: 60px;
+            animation: rotation 4s ease-in-out
+            calc(var(--delay) * 1s) infinite;
+            border-radius: 5px;
+            background-color: var(--clr);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        @keyframes rotation {
+            0%,
+            100% {
+                top: 0;
+                left: 0;
+                width: 60px;
+                height: 60px;
+            }
+            12.5% {
+                top: 0;
+                left: 0;
+                width: 60px;
+                height: 100%;
+            }
+            25% {
+                top: calc(300px - 60px);
+                left: 0;
+                width: 60px;
+                height: 60px;
+            }
+            37.5% {
+                top: calc(300px - 60px);
+                left: 0;
+                width: 100%;
+                height: 60px;
+            }
+            50% {
+                top: calc(300px - 60px);
+                left: calc(300px - 60px);
+                width: 60px;
+                height: 60px;
+            }
+            62.5% {
+                top: 0;
+                left: calc(300px - 60px);
+                width: 60px;
+                height: 100%;
+            }
+            75% {
+                top: 0;
+                left: calc(300px - 60px);
+                width: 60px;
+                height: 60px;
+            }
+            87.5% {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60px;
+            }
+        }
+    }
+
+    .about-me-d {
+        @include display(column, 15px, 400);
+    
+        .abe {
+            font-size: 25px;
+            margin: 0;
+            color: orange;
+        }
+
+        .dfd {
+            font-size: 30px;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .long-one {
+            color: rgb(158, 158, 158);
+            font-size: 20px;
+            margin-top: 0;
+        }
+    }
+}
+
+.portfolio{
+    @include display(column, 15px, 400);
+    flex-direction: column;
+    margin-top: 50px;
+
+    .title-of-i {
+        @include display(column, 25px, 600);
+        color: orange;
+    }
+
+    .innerLine {
+        @include display(row, 30px, 600);
+        margin-top: 0;
+    }
+
+    .main-things {
+        @media (max-width: 600px) {
+            @include display(column, 15px, 400);
+        }
+        @include display(row, 15px, 400);
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .img-button-of-main{
+            @media (max-width: 600px) {
+                height: 270px;
+                width: 270px;
+                margin-bottom: 70px;
+            }
+            height: 300px;
+            width: 500px;
+            margin-right: 20px;
+            flex: 1;
+            background: transparent;
+        }
+
+        .img-button-of-main-2 {
+            height: 50px;
+            width: 50px;
+        }
+
+        .main-thing-p {
+            @include display(column, 15px, 400);
+            flex: 1;
+
+            .cr{
+                margin: 0;
+                font-size: 30px;
+                font-weight: 600;
+            }
+
+            .long-cr {
+                font-size: 20px;
+                color: rgb(158, 158, 158);
+            }
+
+            .no-name {
+                @include display(row, 15px, 400);
+                column-gap: 30px;
+                margin-bottom: 30px;
+
+                .s{
+                    height: 50px;
+                    width: 150px;
+                    font-size: 20px;
+                    background: transparent;
+                    border: none; 
+                }
+                
+                .a{
+                    height: 50px;
+                    width: 150px;
+                    font-size: 20px;
+                    background: transparent;
+                    border: none;
+
+                    &:hover {
+                        opacity: 0.5;
+                        cursor: pointer;
+                    }
+
+                    &:active {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-me {
+    @include display(column, 15px, 400);
+    margin-top: 70px;
+    margin-bottom: 70px;
+
+    .cm {
+        font-size: 25px;
+        font-weight: 600;
+        color: lightsalmon;
+        margin-bottom: 0;
+    }
+
+    .dbs {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .contact-d {
+        @include display(row, 15px, 400);
+        column-gap: 30px;
+
+        .div1 {
+            @include display(column, 15px, 400);
+
+            .notes {
+                color: rgb(158, 158, 158);
+                margin: 0;
+            }
+        }
+    }
+}
+
+footer {
+    @media (max-width: 600px) {
+        font-size: 15px;
+    }
+    @include display(row, 20px, 400);
+    color: white;
+    background-color: brown;
+
+    .github-icons {
+        @include display(row, 15px, 400);
+        column-gap: 20px;
+        margin-left: 50px;
+
+        .igs {
+            height: 50px;
+            width: 50px;
+            background: transparent;
+            border: none;
+
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+
+            &:active {
+                opacity: 0.8;
+            }
+            
+            .ig-imga {
+                height: 45px;
+                width: 45px;
+            }
+        }
+    }
+}
+
+body {
+    @media (max-width: 600px) {
+        margin-top: 40px;
+    }
+    @media (max-width: 300px) {
+        margin-top: 70px;
+    }
+    margin-top: 90px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+

@@ -1,0 +1,160 @@
+@mixin display($rc, $size, $b) {
+    display: flex;
+    flex-direction: $rc;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $size;
+    font-weight: $b
+}
+
+a {
+    text-decoration: none
+}
+
+.header {
+    @include display(row, 15px, 400);
+    height: 70px;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1000;
+
+    .left-section {
+        flex: 1;
+        padding-left: 15px;
+    
+        .kgaugelo-dev-home {
+            @media (max-width: 300px) {
+                visibility: hidden;
+            }
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            border: none;
+            background: transparent;
+    
+            &:hover {
+                opacity: 0.5;
+                cursor: pointer;
+            }
+    
+            &:active {
+                opacity: 0.8;
+            }
+        }
+    }
+    
+    .middle-section {
+        flex: 2;
+        visibility: hidden;
+    }
+    
+    .right-section {
+        flex: 1;
+
+        .go-back {
+            @include display(row, 15px, 600);
+            height: 50px;
+            width: 150px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            
+            &:hover {
+                opacity: 0.5;
+                cursor: pointer;
+            }
+
+            &:active {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.about-me-d {
+        @include display(column, 15px, 400);
+        margin-bottom: 50px;
+    
+        .abe {
+            font-size: 50px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 50px;
+            color: orange;
+            padding-bottom: 30px;
+            border-bottom: 8px solid orange;
+        }
+
+        .dfd {
+            font-size: 30px;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .long-one {
+            color: rgb(158, 158, 158);
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .about-kgau {
+            @include display(column, 15px, 400);
+            margin-top: 50px;
+
+            .main-line {
+                @include display(row, 35px, 600);
+                margin-bottom: 15px;
+            }
+
+            .yac {
+                font-size: 15px;
+
+            }
+        }
+}
+
+footer {
+        @media (max-width: 600px) {
+            font-size: 15px;
+        }
+        @include display(row, 20px, 400);
+        color: white;
+        background-color: brown;
+    
+        .github-icons {
+            @include display(row, 15px, 400);
+            column-gap: 20px;
+            margin-left: 50px;
+    
+            .igs {
+                height: 50px;
+                width: 50px;
+                background: transparent;
+                border: none;
+    
+                &:hover {
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
+    
+                &:active {
+                    opacity: 0.8;
+                }
+                
+                .ig-imga {
+                    height: 45px;
+                    width: 45px;
+                }
+            }
+        }
+}
+
+body {
+    margin-top: 100px;
+}

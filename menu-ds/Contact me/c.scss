@@ -1,0 +1,72 @@
+@mixin display($rc, $size, $b) {
+    display: flex;
+    flex-direction: $rc;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $size;
+    font-weight: $b
+}
+
+a {
+    text-decoration: none
+}
+
+.contact-me {
+    @include display(column, 15px, 400);
+    margin-top: 70px;
+    margin-bottom: 70px;
+
+    .cm {
+        font-size: 50px;
+        font-weight: 600;
+        color: lightsalmon;
+        margin-bottom: 10px;
+    }
+
+    .dbs {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .contact-d {
+        @include display(row, 15px, 400);
+        column-gap: 30px;
+
+        .div1 {
+            @include display(column, 15px, 400);
+
+            .notes {
+                color: rgb(158, 158, 158);
+                margin: 0;
+            }
+        }
+    }
+}
+
+.go-back {
+    @include display(row, 20px, 550);
+    color: white;
+    width: 500px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background-color: red;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+}
+
+body {
+    @include display(column, 15px, 400);
+    margin: 0;
+}
